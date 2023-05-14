@@ -1,11 +1,11 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCOUNT_ID="296654683697"
+        AWS_ACCOUNT_ID="296654683"
         AWS_DEFAULT_REGION="ap-south-1"
         IMAGE_REPO_NAME="java-registry"
         IMAGE_TAG="latest"
-        REPOSITORY_URI = "296654683697.dkr.ecr.ap-south-1.amazonaws.com/java-registry:latest"
+        REPOSITORY_URI = "296654683.dkr.ecr.ap-south-1.amazonaws.com/java-registry:latest"
         DEPLOYMENT_FILE = "notes.yaml"
     }
     tools {
@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git credentialsId: '6470348e-68a8-42dd-8c84-da9aab9e2551', url: 'https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/java-app'
+                git credentialsId: '6470348e-689aab9e2551', url: 'https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/java-app'
                 sh "pwd"
                 // Run Maven on a Unix agent.
                 sh "mvn package -DskipTests"
